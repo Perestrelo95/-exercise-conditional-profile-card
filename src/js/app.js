@@ -18,9 +18,9 @@ import "../style/index.css";
         name: null,
         lastname: null,
         role: null,
-        country: null,
-        city: null
-    }
+        coll
+    }untry: null,
+        city: nu
  */
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
@@ -33,14 +33,18 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name === null ? "" : variables.name} ${
+    variables.lastname === null ? "" : variables.lastname
+  }</h1>
+          <h2>${variables.role === null ? "" : variables.role}</h2>
+          <h3>${variables.city === null ? "" : variables.city} ${
+    variables.country === null ? "" : variables.country
+  }</h3>
+          <ul class="position-left">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/Perestrelo95"><i class="fab fa-github"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/perestreloj_/"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -54,9 +58,11 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlc3N8ZW58MHx8MHx8&w=1000&q=80",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://image.shutterstock.com/image-vector/man-character-face-avatar-glasses-260nw-562077406.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
@@ -89,3 +95,4 @@ window.onload = function() {
     });
   });
 };
+
